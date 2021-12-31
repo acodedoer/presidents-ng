@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="index.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria's Presidents & Heads of States</title>
+    <style>
+      body, html{
+        padding: 0;
+        margin: 0;
+      }
+      #scene{
+       display: none;
+       width: 100%;
+       height: 100%;
+      }
+      #splash-screen{
+        font-family:Verdana, sans-serif;
+        text-align: center;
+        font-size: 2em;
+        width: 100%;
+        height: 100%;
+      }
+      #logo{
+        font-size: 4em;
+        color: #344151;
+      }
+      #small{
+        font-size: 0.5em;
+      }
+      p{
+        padding: 0;
+        margin: 0;
+      }
+      img{
+        max-width: 200px;
+      }
+      #top-logo{
+        width: 100%;
+        position: absolute;
+        top: 40%;
+      }
+      #bottom-logo{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="splash-screen">
+      <div id="top-logo">
+        <p>Nigeria's Presidents & Heads of States</p>   
+      </div>
+      <div id="bottom-logo">
+        <img src="./assets/images/playboxlogofull.png">
+        <p id="small">visit us at playboxgs.com</p>
+      </div>
+      
+      
+      <!-- <p id="small">presented by</p>
+      <p id="logo">playbox</p> -->
+    </div>
+    <div id="scene">
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="heading-model" src="./assets/models/heading.glb"></a-asset-item>
+          <img id="floor_color" src="./assets/texture/Fabric027_1K_Color.jpg">
+          <img id="floor_normal" src="./assets/texture/Fabric027_1K_NormalDX.jpg">
+  
+          <img id="coa" src="./assets/images/coa.png">
+
+          <img id="cna" src="./assets/images/cna.jpg">
+          <img id="satb" src="./assets/images/satb.jpg">
+          <img id="pmb" src="./assets/images/pmb.jpg">
+          <img id="gej" src="./assets/images/gej.jpg">
+  
+          <img id="umy" src="./assets/images/umy.jpg">
+          <img id="poo" src="./assets/images/poo.jpg">
+          <img id="gaa" src="./assets/images/gaa.jpg">
+          <img id="gsa" src="./assets/images/gsa.png">
+  
+          <img id="pss" src="./assets/images/pss.jpg">
+          <img id="gmb" src="./assets/images/gmb.jpg">
+          <img id="gib" src="./assets/images/gib.jpg">
+          <img id="ces" src="./assets/images/ces.jpg">
+  
+          <img id="mgai" src="./assets/images/mgai.jpg">
+          <img id="gyg" src="./assets/images/gyg.jpg">
+          <img id="gmm" src="./assets/images/gmm.jpg">
+          <img id="goo" src="./assets/images/goo.jpg">
+  
+  
+          <a-mixin id="heading-mixin"  gltf-model="#heading-model" scale="0.4 0.4 0.8" ></a-mixin>
+  
+        </a-assets>
+        <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls="pointerLockEnabled:true"> 
+          <a-cursor fuse="true" fuse-timeout="500" 
+          raycaster="far: 20; interval: 0; objects: .clickable"
+          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.5 0.5 0.5"
+          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 100; to: 1 1 1"
+          >  </a-cursor>
+        </a-entity>
+          <a-entity mixin="heading-mixin" position="-3.1 3.4 -5" material="color:black"></a-entity>
+          <a-entity light="type: point; intensity: 0.3; distance: 50; decay: 2" position="4 3 4"></a-entity>
+          <a-entity light="type: point; intensity: 0.3; distance: 50; decay: 2" position="-4 3 4"></a-entity>
+          <a-entity light="type: point; intensity: 0.3; distance: 50; decay: 2" position="4 3 -4"></a-entity>
+          <a-entity light="type: point; intensity: 0.3; distance: 50; decay: 2" position="-4 3 -4"></a-entity>
+          <a-entity light="type: ambient; color: #CCC; intensity:0.5"></a-entity>
+          
+          <a-entity geometry="primitive:plane; height:4; width:10" position="0 2 5"  material="side: double"></a-entity>
+          <a-entity geometry="primitive:plane; height:4; width:10" position="-5 2 0" rotation="0 90 0" material="side: double"></a-entity>
+          <a-entity geometry="primitive:plane; height:4; width:10" position="5 2 0" rotation="0 -90 0" material="side: double"></a-entity>
+          <a-entity geometry="primitive:plane; height:4; width:10" position="0 2 -5"  material="side: double"></a-entity>
+          <a-entity geometry="primitive:plane; height:10; width:10" position="0 4 0" rotation="90 0 0"  material="color:white"></a-entity>
+          <a-entity geometry="primitive:plane; height:10; width:10" position="0 0 0" rotation="-90 0 0"  material="repeat:5 5;src:#floor_color;normalMap:#floor_normal; normalTextureRepeat: 5 5; roughness:1"></a-entity>
+          <a-entity geometry="primitive:cylinder; height:0.55; radius:1.5" position="0 3.75 0" rotation="0 -90 0"  material="src:#coa"></a-entity>
+          <a-entity geometry="primitive:cylinder; height:0.5; radius:1.6" position="0 3.75 0" rotation="0 -90 0"  material="color:#395112"></a-entity>
+          
+          <!--Front wall  -->
+          <a-entity information="name:Chief Benjamin Nnamdi Azikiwe; period:1963 - 1966" geometry="primitive:box; height:2; width:2; depth: 0.05" position="-3.75 2 -4.95"  material="color:#395112">
+              <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#cna"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:Alhaji Abubakar Tafawa Balewa; period:1960 - 1966" geometry="primitive:box; height:2; width:2; depth: 0.05" position="-1.25 2 -4.95"  material="color:#e3e4e8">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#satb"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:Muhammadu Buhari; period:2015 - present" geometry="primitive:box; height:2; width:2; depth: 0.05" position="1.25 2 -4.95"  material="color:#395112">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#pmb"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:Dr Goodluck Ebele Jonathan; period:2010 - 2015" geometry="primitive:box; height:2; width:2; depth: 0.05" position="3.75 2 -4.95"  material="color:#e3e4e8">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gej"></a-entity>
+          </a-entity>
+  
+          <!--Right wall  -->
+          <a-entity information="name:Umaru Musa Yar'adua; period:2007 - 2010" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 -90 0" position="4.95 2 -3.75"  material="color:#395112">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#umy"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:General Olusegun Obasanjo (RTD); period:1999 - 2007" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 -90 0" position="4.95 2 -1.25"  material="color:#e3e4e8">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#poo"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:General Abdulsalami Abubakar; period:1998 - 1999"geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 -90 0" position="4.95 2 1.25"  material="color:#395112">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gaa"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:General Sani Abacha; period:1993 - 1998" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 -90 0" position="4.95 2 3.75"  material="color:#e3e4e8">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gsa"></a-entity>
+          </a-entity>
+  
+          <!--Back wall  -->
+          <a-entity information="name:Shehu Shagari; period:1979 - 1983" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 180 0" position="-3.75 2 4.95"  material="color:#e3e4e8">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#pss"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:Major-General Muhammadu Buhari; period:1983 - 1985" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 180 0" position="-1.25 2 4.95"  material="color:#395112">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gmb"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:General Ibrahim Badamasi Babangida; period:1985 - 1993" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 180 0" position="1.25 2 4.95"  material="color:#e3e4e8">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gib"></a-entity>
+          </a-entity>
+  
+          <a-entity information="name:Chief Ernest Shonekan; period:Aug 1993 - Nov 1993" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 180 0" position="3.75 2 4.95"  material="color:#395112">
+            <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#ces"></a-entity>
+          </a-entity>
+  
+           <!--Left wall  -->
+           <a-entity information="name:Major-General Johnson Aguiyi-Ironsi; period:Jan 1966 - Jul 1966" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 90 0" position="-4.95 2 -3.75"  material="color:#e3e4e8">
+              <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#mgai"></a-entity>
+            </a-entity>
+  
+            <a-entity information="name:General Yakubu Gowon ; period:1966 - 1975" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 90 0" position="-4.95 2 -1.25"  material="color:#395112">
+              <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gyg"></a-entity>
+            </a-entity>
+  
+            <a-entity information="name:General Murtala Mohammed ; period:1975 - 1976" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 90 0" position="-4.95 2 1.25"  material="color:#e3e4e8">
+              <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#gmm"></a-entity>
+            </a-entity>
+  
+            <a-entity information="name:General Olusegun Obasanjo; period:1976 - 1979" geometry="primitive:box; height:2; width:2; depth: 0.05" rotation = "0 90 0" position="-4.95 2 3.75"  material="color:#395112">
+              <a-entity geometry="primitive:plane; height:1.8; width:1.8" position="0 0 0.03"  material="src:#goo"></a-entity>
+            </a-entity>
+      </a-scene>
+    </div>
+    
+    <script src="js.js"></script>
+    </body>
+</html>
