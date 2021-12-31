@@ -99,7 +99,7 @@
           <a-mixin id="heading-mixin"  gltf-model="#heading-model" scale="0.4 0.4 0.8" ></a-mixin>
   
         </a-assets>
-        <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls="pointerLockEnabled:true"> 
+        <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls> 
           <a-cursor fuse="true" fuse-timeout="500" 
           raycaster="far: 20; interval: 0; objects: .clickable"
           animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.5 0.5 0.5"
