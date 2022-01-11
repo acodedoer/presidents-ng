@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="./playbox-virtual-tour-aframe.js"></script>
     <script src="index.js"></script>
 
     <meta charset="UTF-8">
@@ -49,25 +49,31 @@
         position: absolute;
         bottom: 0;
       }
+      .scale {
+        animation: scale 1s infinite alternate;
+      }
+
+      @keyframes scale {
+      0% {
+        transform: scale(1.0);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
     </style>
   </head>
 
   <body>
     <div id="splash-screen">
       <div id="top-logo">
-        <p>Nigeria's Presidents & Heads of States</p>   
+        <img src="./assets/images/playboxtitle.png">
+        <br>
+        <img class="scale"style="max-width:10%" src="./assets/images/playboxlogo.png">
       </div>
-      <div id="bottom-logo">
-        <img src="./assets/images/playboxlogofull.png">
-        <p id="small">visit us at playboxgs.com</p>
-      </div>
-      
-      
-      <!-- <p id="small">presented by</p>
-      <p id="logo">playbox</p> -->
     </div>
     <div id="scene">
-      <a-scene>
+      <a-scene vr-mode-ui="enabled: false">
         <a-assets>
           <a-asset-item id="heading-model" src="assets/models/heading.glb"></a-asset-item>
           <img id="floor_color" src="assets/texture/Fabric027_1K_Color.jpg">
@@ -99,7 +105,7 @@
           <a-mixin id="heading-mixin"  gltf-model="#heading-model" scale="0.4 0.4 0.8" ></a-mixin>
   
         </a-assets>
-        <a-entity id="camera" camera position="0 1.6 0" wasd-controls look-controls> 
+        <a-entity id="camera" camera position="0 1.6 0" look-controls> 
           <a-cursor fuse="true" fuse-timeout="500" 
           raycaster="far: 20; interval: 0; objects: .clickable"
           animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.5 0.5 0.5"
